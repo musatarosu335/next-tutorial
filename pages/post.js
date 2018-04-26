@@ -1,20 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../components/MyLayout';
+import Content from '../components/Content';
 
 const post = props => (
   <Layout>
-    <h1>{props.url.query.title}</h1>
-    <p>This is the blog post content.</p>
+    <Content url={props.url} />
   </Layout>
 );
 
 post.propTypes = {
-  url: PropTypes.shape({
-    query: PropTypes.shape({
-      title: PropTypes.string,
-    }),
-  }).isRequired,
+  url: PropTypes.object.isRequired,
 };
 
 export default post;
